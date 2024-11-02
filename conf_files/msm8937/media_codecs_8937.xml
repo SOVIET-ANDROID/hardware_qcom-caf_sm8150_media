@@ -107,12 +107,11 @@ Only the three quirks included above are recognized at this point:
 -->
 
 <MediaCodecs>
-    <Include href="media_codecs_google_c2_audio.xml" />
-    <Include href="media_codecs_google_c2_telephony.xml" />
     <Settings>
         <Setting name="max-video-encoder-input-buffers" value="9" />
     </Settings>
     <Encoders>
+        <!-- Video Hardware  -->
         <MediaCodec name="OMX.qcom.video.encoder.avc" type="video/avc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
@@ -165,48 +164,5 @@ Only the three quirks included above are recognized at this point:
             <Feature name="adaptive-playback" />
             <Limit name="concurrent-instances" max="8" />
         </MediaCodec>
-        <MediaCodec name="OMX.qti.video.decoder.divxsw" type="video/divx" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="16x16" max="1920x1088" />
-            <Limit name="alignment" value="2x2" />
-            <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="244800" />
-            <Limit name="bitrate" range="1-6000000" />
-            <Limit name="concurrent-instances" max="1" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qti.video.decoder.divx4sw" type="video/divx4" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="16x16" max="1920x1088" />
-            <Limit name="alignment" value="2x2" />
-            <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="244800" />
-            <Limit name="bitrate" range="1-6000000" />
-            <Limit name="concurrent-instances" max="1" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qti.video.decoder.mpeg4sw">
-            <Type name="video/mp4v-es" />
-            <Type name="video/mp4v-esdp" />
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="16x16" max="1920x1088" />
-            <Limit name="alignment" value="2x2" />
-            <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="244800" />
-            <Limit name="bitrate" range="1-6000000" />
-            <Limit name="concurrent-instances" max="1" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qti.video.decoder.h263sw" type="video/3gpp" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="16x16" max="864x480" />
-            <Limit name="alignment" value="4x4" />
-            <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="48600" />
-            <Limit name="bitrate" range="1-2000000" />
-            <Limit name="concurrent-instances" max="1" />
-        </MediaCodec>
     </Decoders>
-    <Include href="media_codecs_google_c2_video.xml" />
 </MediaCodecs>
